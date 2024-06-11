@@ -1,0 +1,5 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Assure que le conteneur prend toute la largeur */
+}

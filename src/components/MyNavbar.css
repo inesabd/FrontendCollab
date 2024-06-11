@@ -1,0 +1,42 @@
+.my-navbar {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(66, 4, 190, 0.1);
+  height: 60px;
+  display: flex;
+  align-items: center; /* Ensures everything in the navbar is aligned centrally */
+}
+
+.my-navbar .navbar-brand {
+  font-weight: bold;
+  color: rgb(2, 8, 13);
+  margin-right: 10rem; /* Right margin set here */
+}
+
+.my-navbar .nav-link {
+  color: black;
+  margin-right: 50px;
+  padding-right: 20px;
+  display: flex; /* Make nav-link a flex container */
+  align-items: center; /* Align the icon and text vertically */
+}
+
+.my-navbar .nav-link:hover {
+  color: #f64882;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.my-navbar .navbar-icon {
+  font-size: 1.5em; /* Ensures all icons are the same size */
+  color: black;
+  margin-right: 5px;
+}
+
+.my-navbar .navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+.my-navbar .navbar-brand img {
+  width: 100px; /* ou la largeur souhaitée */
+  height: auto; /* conserve l'aspect ratio de l'image */
+}
