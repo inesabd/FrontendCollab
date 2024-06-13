@@ -1,20 +1,21 @@
-// src/Page/HomePage.js
 import React from 'react';
-import Navbar from '../components/MyNavbarTT';
+import MyNavbarTT from '../components/MyNavbarTT';
 import Sidebar from '../components/SideBar';
+import PostCreator from '../components/PostCreator';
+import './HomePage.css';
 
-function HomePage() {
+const HomePage = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="main-content">
+    <>
+      <MyNavbarTT />
+      <div className="d-flex">
         <Sidebar />
-        <div className="content">
-          {/* Contenu principal de la page ici */}
+        <div className="content flex-grow-1 p-3">
+          <PostCreator />
         </div>
       </div>
-    </div>
+    </>
   );
-}
+};
 
 export default HomePage;

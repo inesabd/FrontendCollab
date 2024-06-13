@@ -1,0 +1,38 @@
+.post-creator-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-creator {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-input {
+    border-radius: 50px;
+    padding: 10px 20px;
+  }
+  
+  .post-action {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #495057;
+  }
+  
+  .post-action .icon {
+    margin-right: 8px;
+    height: 24px;
+    width: 24px;
+  }
+
+  /* .ButtonCreator {
+    color: white;         
+    padding: 10px 20px;   
+    border: none;          
+    border-radius: 5px;     
+} */

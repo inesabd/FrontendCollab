@@ -1,0 +1,37 @@
+.modal-dialog {
+    max-width: 30%; /* Ajuste la largeur maximale du modal */
+    width: auto; /* La largeur s'adapte au contenu */
+    max-height: 80vh; /* Utilisez vh pour un meilleur contrôle de la hauteur relative à la fenêtre */
+}
+
+.modal-content {
+    overflow: hidden; /* Cache les débordements pour le contenu du modal */
+}
+
+.modal-body {
+    max-height: calc(100vh - 210px); /* Ajuste la hauteur maximale pour permettre le défilement */
+    overflow-y: auto; /* Active le défilement vertical si nécessaire */
+}
+
+.modal-header, .modal-footer {
+    background-color: #f8f9fa; /* Couleur de fond pour les en-têtes et pieds de page du modal */
+    border-bottom: 1px solid #dee2e6; /* Ajoute une ligne séparatrice */
+}
+
+.modal-title {
+    color: #495057; /* Couleur du texte pour le titre */
+}
+
+.modal-footer {
+    border-top: none; /* Supprime la bordure au sommet du pied de page */
+}
+
+.btn-link {
+    color: #007bff; /* Couleur des boutons liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-weight: bold; /* Rend le texte des boutons plus gras */
+}
+
+.btn-link:hover {
+    color: #0056b3; /* Couleur des boutons liens au survol */
+}

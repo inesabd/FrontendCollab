@@ -4,4 +4,9 @@
     flex-direction: column;
     width: 100%;
   }
-  
+  .home-page .content {
+    margin-left: 270px; /* Décale le contenu principal pour laisser de la place à la sidebar */
+  }
+  .home-page {
+    background-color: aliceblue;
+  }

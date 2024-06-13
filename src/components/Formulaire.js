@@ -1,133 +1,101 @@
 import React from 'react';
-import { Container, Row, Col, InputGroup, FormControl, Form, Button } from 'react-bootstrap';
-import { MdOutlinePostAdd } from "react-icons/md";
-
 import './Formulaire.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+const Formulaire = () => {
+    // Générer les options pour les jours, mois et années
+    const days = Array.from({ length: 31 }, (_, i) => i + 1);
+    const months = [
+        'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+        'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
+    ];
+    const currentYear = new Date().getFullYear();
+    const years = Array.from({ length: 100 }, (_, i) => currentYear - i);
 
-function Formulaire() {
     return (
-        <Container >
-            <Row className="align-items-center my-3">
-                <Col md={6}>
-                    <div className="home-icon-text">
-                        <MdOutlinePostAdd  className="icon" /> 
-                        <span className='home-text'>Ajouter une intervention</span>
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <img src="/recom.png" alt="Logo" className="logo" />
+                            <p className="text-center">Créer un Compte</p>
+                            <form>
+                                <div className="form-row">
+                                    <div className="form-group col-md-6">
+                                        <input type="text" className="form-control" placeholder="Prénom" />
+                                    </div>
+                                    <div className="form-group col-md-6">
+                                        <input type="text" className="form-control" placeholder="Nom de famille" />
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Numéro mobile ou e-mail" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" placeholder="Mot de passe" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" placeholder="Confirmer le mot de passe" />
+                                </div>
+                                <div className="form-group">
+                                    <label>Date de naissance</label>
+                                    <div className="form-row">
+                                        <div className="form-group col-md-3">
+                                            <select className="form-control">
+                                                {days.map(day => (
+                                                    <option key={day} value={day}>{day}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <div className="form-group col-md-6">
+                                            <select className="form-control">
+                                                {months.map((month, index) => (
+                                                    <option key={index} value={month}>{month}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <div className="form-group col-md-3">
+                                            <select className="form-control">
+                                                {years.map(year => (
+                                                    <option key={year} value={year}>{year}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label>Genre</label>
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="radio" name="gender" id="female" />
+                                        <label className="form-check-label" htmlFor="female">
+                                            Femme
+                                        </label>
+                                    </div>
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="radio" name="gender" id="male" />
+                                        <label className="form-check-label" htmlFor="male">
+                                            Homme
+                                        </label>
+                                    </div>
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="radio" name="gender" id="custom" />
+                                        <label className="form-check-label" htmlFor="custom">
+                                            Personnalisé
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" className="button">S'inscrire</button>
+                            </form>
+                           
+                            <p className="text-muted small">
+                             <p> Merci de renseigner tous les champs avant de s'inscrire</p>
+                            </p>
+                        </div>
                     </div>
-                </Col>
-            </Row>    
-            {/* <Row className="justify-content-center my-3">
-                <Col md={3}>
-                    <InputGroup>
-                        <InputGroup.Text>
-                            <MdDateRange />
-                        </InputGroup.Text>
-                        <FormControl
-                            type="date"
-                            name="date-picker"
-                            id="date-picker"
-                            placeholder="Select a date"
-                            aria-label="Select a date"
-                        />
-                    </InputGroup>
-                </Col>
-            </Row> */}
-            <Row className='contour'>
-                <Col md={8}>
-                    <Form>
-                        <Row>
-                            <Col md={6}>
-                                <Form.Group controlId="formNomApplication">
-                                    <Form.Label>Nom Application/infra</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter application name" />
-                                </Form.Group>
-                                <Form.Group controlId="formReferenceIncident">
-                                    <Form.Label>Référence incident</Form.Label>
-                                    <Form.Control type="text"  />
-                                </Form.Group>
-                                <Form.Group controlId="formStartTime">
-                                    <Form.Label>Heure de début d'intervention</Form.Label>
-                                    <Form.Control type="time" />
-                                </Form.Group>
-                                <Form.Group controlId="formEndTime">
-                                    <Form.Label>Heure de fin d'intervention</Form.Label>
-                                    <Form.Control type="time" />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group controlId="formImpact">
-                                    <Form.Label>Date de debut d'intervention</Form.Label>
-                                    <Form.Control as="textarea"  />
-                                </Form.Group>
-                                <Form.Group controlId="formImpact">
-                                    <Form.Label>Date de fin d'intervention</Form.Label>
-                                    <Form.Control as="textarea" rows={1} />
-                                </Form.Group>
-                                <Form.Group controlId="formImpact">
-                                    <Form.Label>Impact</Form.Label>
-                                    <Form.Control as="textarea" rows={1} />
-                                </Form.Group>
-                               
-                                {/* <Form.Group controlId="formActionChronology">
-                                    <Form.Label>Chronologie des actions correctives</Form.Label>
-                                    <Form.Control as="textarea" rows={4} />
-                                </Form.Group> */}
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={12}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Description de l'incident</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={6}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Participant a la conf</Form.Label>
-                                    <Form.Control as="textarea" rows={2} />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Root de cause</Form.Label>
-                                    <Form.Control as="textarea" rows={1} />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Commentaire</Form.Label>
-                                    <Form.Control as="textarea" rows={1} />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Chronologie des actions</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-                            </Col>
-                            <Col md={12}>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Ajouter une piece jointe</Form.Label>
-                                    <Form.Control as="textarea" rows={1} />
-                                </Form.Group>
-                            </Col>
-                        </Row>
-                        <Row>
-                              <Col md={12} className="button-container">
-                                     <Button className='buttonVB' variant="primary" type="submit">
-                                                              Valider
-                                     </Button>
-                                   <Button className='buttonVB' variant="secondary" style={{ marginLeft: '10px' }}>
-                                      Brouillon
-                                    </Button>
-                                </Col>
-                        </Row>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 }
 
