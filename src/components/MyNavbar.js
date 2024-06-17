@@ -25,7 +25,7 @@ const MyNavbar = () => {
       <div>
       <img src="/recom.png" alt="Logo" />
     </div>
-</Navbar.Brand>
+     </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
