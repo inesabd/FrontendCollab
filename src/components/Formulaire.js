@@ -3,7 +3,6 @@ import './Formulaire.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Formulaire = () => {
-    // Générer les options pour les jours, mois et années
     const days = Array.from({ length: 31 }, (_, i) => i + 1);
     const months = [
         'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
@@ -87,9 +86,8 @@ const Formulaire = () => {
                                 </div>
                                 <button type="submit" className="button">S'inscrire</button>
                             </form>
-                           
-                            <p className="text-muted small">
-                             <p> Merci de renseigner tous les champs avant de s'inscrire</p>
+                            <p className="text-muted small text-center">
+                                Merci de renseigner tous les champs avant de s'inscrire
                             </p>
                         </div>
                     </div>

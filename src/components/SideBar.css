@@ -1,14 +1,15 @@
 .sidebar {
-    width: 200px;
-    height: 100vh;
-    padding: 16px;
-    background-color: #95c3f3;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    transition: width 0.3s ease, padding 0.3s ease; 
-    border-radius: 3%;
-  }
+  width: 200px;
+  height: 40vh !important;
+  padding: 16px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.3s ease, padding 0.3s ease; 
+  border-radius: 3%;
+}
+
   
   .sidebar-menu {
     display: flex;

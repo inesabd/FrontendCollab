@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import PhotoUpload from './PhotoUpload'; 
+import PhotoUpload from './PhotoUpload';
 import './PublicationModal.css';
 
 const PublicationModal = ({ show, handleClose, userName }) => {
-  const [imagePreview, setImagePreview] = useState(null);
+  const [imagePreviews, setImagePreviews] = useState([]);
   const [postContent, setPostContent] = useState('');
 
   const handleCancel = () => {
-    setImagePreview(null);
+    setImagePreviews([]);
     setPostContent('');
     handleClose();
   };
 
-  const handleRemoveImage = () => {
-    setImagePreview(null);
+  const handleRemoveImage = (index) => {
+    setImagePreviews(prev => prev.filter((_, i) => i !== index));
   };
 
   const handlePostContentChange = (e) => {
@@ -49,11 +49,15 @@ const PublicationModal = ({ show, handleClose, userName }) => {
               className="post-textarea"
             />
           </Form.Group>
-          <PhotoUpload setImagePreview={setImagePreview} />
-          {imagePreview && (
-            <div className="image-preview">
-              <img src={imagePreview} alt="Image Preview" className="img-thumbnail" />
-              <Button variant="danger" onClick={handleRemoveImage}>Remove</Button>
+          <PhotoUpload setImagePreviews={setImagePreviews} />
+          {imagePreviews.length > 0 && (
+            <div className="image-preview-container">
+              {imagePreviews.map((imagePreview, index) => (
+                <div key={index} className="image-preview">
+                  <img src={imagePreview} alt="Image Preview" className="img-thumbnail" />
+                  <Button variant="danger" onClick={() => handleRemoveImage(index)}>Remove</Button>
+                </div>
+              ))}
             </div>
           )}
         </Form>

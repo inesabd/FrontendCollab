@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/MyNavbar';
 
@@ -11,7 +11,7 @@ function LoginPage() {
   const handleLogin = (event) => {
     event.preventDefault();
     if (username === "user" && password === "pass") { 
-      navigate('/'); 
+      navigate('/home'); // Redirige vers la page d'accueil après connexion
     } else {
       alert('Identifiants incorrects');
     }
@@ -24,16 +24,16 @@ function LoginPage() {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '20px', // Adds padding around the form
-      backgroundColor: '#f0f8ff' // Very light blue background for the entire page
+      padding: '20px',
+      backgroundColor: '#f0f8ff'
     },
     formContainer: {
       boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       borderRadius: '8px',
-      padding: '2rem', // Increased padding for better spacing
+      padding: '2rem',
       backgroundColor: 'white',
-      width: '100%', // Full width to accommodate smaller screens
-      maxWidth: '400px' // Maximum width of the form
+      width: '100%',
+      maxWidth: '400px'
     },
     formTitle: {
       marginBottom: '1rem',
@@ -47,6 +47,11 @@ function LoginPage() {
       width: '100%',
       padding: '10px',
       fontSize: '16px'
+    },
+    signUpLink: {
+      display: 'block',
+      marginTop: '1rem',
+      textAlign: 'center'
     }
   };
 
@@ -83,6 +88,7 @@ function LoginPage() {
             </div>
             <button type="submit" className="btn btn-primary" style={style.loginButton}>Se Connecter</button>
           </form>
+          <Link to="/formulaire" style={style.signUpLink}>Vous n'avez pas de compte ? Inscrivez-vous ici</Link>
         </div>
       </div>
     </>
