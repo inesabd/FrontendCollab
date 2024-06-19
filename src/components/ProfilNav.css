@@ -1,0 +1,18 @@
+/* ProfilNav.css */
+.nav-item {
+    width: 10%;
+  }
+.profile-nav {
+    margin-top: 20px;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .profile-nav .nav-item {
+    margin: 0 10px;  /* Espacement entre les onglets */
+  }
+  
+  .profile-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  

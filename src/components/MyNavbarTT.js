@@ -39,6 +39,9 @@ const MyNavbarTT = () => {
               <Link to="/relation" className="nav-link">
                 <IoIosContact className="icon" />Relation
               </Link>
+              <Link to="/profil" className="nav-link">  {/* Nouvel onglet Profil */}
+                <IoIosContact className="icon" />Profil
+              </Link>
               <OverlayTrigger
                 placement="bottom"
                 overlay={renderTooltip({ children: 'Learn more about us!' })}

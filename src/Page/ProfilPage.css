@@ -1,0 +1,24 @@
+/* ProfilPage.css */
+
+.d-flex {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 3rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}

@@ -1,8 +1,8 @@
 .sidebar {
   width: 200px;
-  height: 40vh !important;
+  height: 100vh !important;
   padding: 16px;
-  background-color: #000000;
+  background-color: #690d0d;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;

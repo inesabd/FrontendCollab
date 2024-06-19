@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './Page/HomePage';
 import FormulairePage from './Page/FormulairePage';
 import RelationPage from './Page/RelationPage';
+import ProfilPage from './Page/ProfilPage';  // Importation de ProfilPage
 
 function App() {
   const router = createBrowserRouter([
@@ -14,6 +15,7 @@ function App() {
     { path: "/home", element: <HomePage /> },
     { path: "/formulaire", element: <FormulairePage /> },
     { path: "/relation", element: <RelationPage /> },
+    { path: "/profil", element: <ProfilPage /> },  // Nouvelle route pour ProfilPage
   ]);
 
   return (
