@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import './ProfilPage.css';
-import profilePic from '../images/burger.jpg';  // Importer directement l'image
+import profilePic from '../images/burger.jpg';
 import MyNavbarTT from '../components/MyNavbarTT';
 import Sidebar from '../components/SideBar';
 import PostCreator from '../components/PostCreator';
-import ProfilNav from '../components/ProfilNav'; // Importer le nouveau composant
+import ProfilNav from '../components/ProfilNav';
 
 const ProfilPage = () => {
   return (
@@ -19,14 +19,24 @@ const ProfilPage = () => {
               <Col md={8}>
                 <Card>
                   <Card.Body className="text-center">
-                    <Image src={profilePic} roundedCircle className="profile-pic" />  {/* Utiliser l'import */}
+                    <Image src={profilePic} roundedCircle className="profile-pic" />
                     <h3>Cheb Khaled</h3>
                     <p className="text-muted">Bio: C'est ici que l'utilisateur peut écrire une courte biographie.</p>
                     <hr />
-                    <p><strong>Nombre d'amis:</strong> 150</p>
+                    <Row className="text-center">
+                      <Col>
+                        <p><strong>Amis :</strong> 150</p>
+                      </Col>
+                      <Col>
+                        <p><strong>Post :</strong> 22</p>
+                      </Col>
+                      <Col>
+                        <p><strong>J'aime :</strong> 2689</p>
+                      </Col>
+                    </Row>
                   </Card.Body>
                 </Card>
-                <ProfilNav /> {/* Ajouter le composant ProfilNav ici */}
+                <ProfilNav />
               </Col>
             </Row>
           </Container>

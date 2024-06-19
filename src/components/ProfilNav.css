@@ -1,18 +1,20 @@
 /* ProfilNav.css */
-.nav-item {
-    width: 10%;
-  }
+
 .profile-nav {
-    margin-top: 20px;
-    border-bottom: 1px solid #dee2e6;
-  }
-  
-  .profile-nav .nav-item {
-    margin: 0 10px;  /* Espacement entre les onglets */
-  }
-  
-  .profile-nav .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-  
+  margin-top: 20px;
+  border-bottom: 1px solid #dee2e6;
+  display: flex; /* Utilisation de flexbox pour aligner les éléments */
+  justify-content: center; /* Centrer horizontalement les éléments */
+}
+
+.profile-nav .nav-item {
+  margin: 0 10px; /* Espacement entre les onglets */
+  flex: 1; /* Pour que chaque onglet prenne autant d'espace */
+  text-align: center; /* Centrer le texte à l'intérieur de chaque onglet */
+}
+
+.profile-nav .nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: center; /* Centrer également le texte des liens */
+}
