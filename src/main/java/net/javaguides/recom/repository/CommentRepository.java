@@ -1,2 +1,13 @@
-package net.javaguides.recom.repository;public interface CommentRepository {
+package net.javaguides.recom.repository;
+
+import net.javaguides.recom.entity.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+
+    List<Comment> findByPublicationId(Long publicationId);
+
+    // Autres méthodes de requête personnalisée si nécessaire
 }
