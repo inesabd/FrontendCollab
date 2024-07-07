@@ -1,0 +1,45 @@
+/* File: src/Feed.css */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-left: 18%;
+  margin-top: 8%;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info {
+    margin-left: 15px;
+  }
+  
+  .post-content {
+    margin-top: 15px;
+  }
+  
+  .post-footer {
+    margin-top: 15px;
+  }
+  
+  .action-button {
+    background-color: transparent;
+    border: none;
+    color: #101010;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .action-button i {
+    margin-right: 5px;
+  }
+  
+  .action-button:hover {
+    text-decoration: underline;
+  }
+  

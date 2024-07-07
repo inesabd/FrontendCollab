@@ -16,6 +16,7 @@ function App() {
     { path: "/formulaire", element: <FormulairePage /> },
     { path: "/relation", element: <RelationPage /> },
     { path: "/profil", element: <ProfilPage /> },  // Nouvelle route pour ProfilPage
+    
   ]);
 
   return (

@@ -1,19 +1,25 @@
 import React from 'react';
-import MyNavbarTT from '../components/MyNavbarTT';
-import Sidebar from '../components/SideBar';
-import PostCreator from '../components/PostCreator';
+import { Container,Row,Col } from 'react-bootstrap';
+import  MyNavbarTT  from '../components/MyNavbarTT';
+// import Sidebar from '../components/SideBar';
 import './HomePage.css';
+import SideTest from '../components/SideTest';
+import Body from '../components/Body';
+// import RightBar from '../components/RightBar';
 
 const HomePage = () => {
   return (
     <>
       <MyNavbarTT />
-      <div className="d-flex">
-        <Sidebar />
-        <div className="content flex-grow-1 p-3">
-          <PostCreator />
-        </div>
-      </div>
+<Container fluid>
+  <Row>
+  <SideTest />
+  <Col md={10}>
+  <Body></Body>
+  </Col>
+  </Row>
+  </Container>        
+       
     </>
   );
 };

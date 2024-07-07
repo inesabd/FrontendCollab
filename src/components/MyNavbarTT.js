@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Form, FormControl, Button, NavDropdown, Tooltip, OverlayTrigger, Container } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, NavDropdown, Tooltip, OverlayTrigger, Container, InputGroup } from 'react-bootstrap';
 import { IoIosContact } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
 import { IoNotificationsCircleSharp } from "react-icons/io5";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AccountModal from './AccountModal'; 
-import { IoSearchCircle } from "react-icons/io5";
 import './MyNavbarTT.css';
 
 const MyNavbarTT = () => {
@@ -14,7 +14,7 @@ const MyNavbarTT = () => {
   const toggleModal = () => setShowModal(!showModal);
 
   const handleLogout = () => {
-    navigate('/login'); // Redirige vers la page de login
+    navigate('/login')
   };
 
   const renderTooltip = props => (
@@ -33,14 +33,8 @@ const MyNavbarTT = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Link to="/home" className="nav-link">
-                <AiFillHome className="icon" />Accueil
-              </Link>
               <Link to="/relation" className="nav-link">
                 <IoIosContact className="icon" />Relation
-              </Link>
-              <Link to="/profil" className="nav-link">  {/* Nouvel onglet Profil */}
-                <IoIosContact className="icon" />Profil
               </Link>
               <OverlayTrigger
                 placement="bottom"
@@ -51,10 +45,18 @@ const MyNavbarTT = () => {
                 </Link>
               </OverlayTrigger>
             </Nav>
-            <Nav>
-              <IoSearchCircle />
-              <Form inline>
-                <FormControl type="text" placeholder="Recherche..." className="mr-sm-2" />
+            <Nav className="mx-auto">
+              <Form className="d-flex justify-content-center mt-3 w-100">
+              <InputGroup className="search-bar">                  <InputGroup.Text id="search-icon">
+                    <FontAwesomeIcon icon={faSearch} />
+                  </InputGroup.Text>
+                  <FormControl
+                    type="text"
+                    placeholder="Recherche"
+                    aria-label="Recherche"
+                    aria-describedby="search-icon"
+                  />
+                </InputGroup>
               </Form>
             </Nav>
             <Nav className="ml-auto">

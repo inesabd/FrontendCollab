@@ -3,16 +3,17 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import './ProfilPage.css';
 import profilePic from '../images/burger.jpg';
 import MyNavbarTT from '../components/MyNavbarTT';
-import Sidebar from '../components/SideBar';
 import PostCreator from '../components/PostCreator';
 import ProfilNav from '../components/ProfilNav';
+import SideTest from '../components/SideTest';
 
 const ProfilPage = () => {
   return (
     <>
       <MyNavbarTT />
       <div className="d-flex">
-        <Sidebar />
+        
+        <SideTest />
         <div className="content flex-grow-1 p-3">
           <Container className="mt-5">
             <Row className="justify-content-center">
@@ -41,6 +42,7 @@ const ProfilPage = () => {
             </Row>
           </Container>
           <PostCreator />
+         
         </div>
       </div>
     </>
